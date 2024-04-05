@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default mainCard = (props) => (
+const MainCard = (props) => (
   <div className="card" key={props.id}>
-    
     <img
       src={`https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg`}
       alt={props.name}
@@ -14,3 +13,5 @@ export default mainCard = (props) => (
     </Link>
   </div>
 );
+
+export default MainCard;
