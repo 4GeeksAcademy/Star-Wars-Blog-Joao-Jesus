@@ -1,15 +1,40 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      vehicles: [],
       characters: [],
       planets: [],
       singleCharacter: null,
       singlePlanet: null,
+      singleVehicle:null
     },
     actions: {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
+      },
+      getVehicles: async () =>  { 
+        try { 
+          const vehicleRes = await fetch("https://www.swapi.tech/api/vehicles");
+          console.log(vehicleData)
+          const vehicleData = await vehicleRes.json();
+          setStore({vehicles: [...vehicleData.results]})
+        }catch (error) {
+          console.log("error fetching planets", error);
+        }
+       }, 
+       getOneVehicle: async (id) => {
+        try {
+          const vehicleRes = await fetch(
+            "https://www.swapi.tech/api/vehicle/" + id
+          );
+          const vehicleData = await vehicleRes.json();
+          console.log(vehicleData)
+          console.log(id)
+          setStore({ singleVehicle: vehicleData.result });
+        } catch (error) {
+          console.log("error fetching characters", error);
+        }
       },
 
       getPlanets: async () =>  { 
