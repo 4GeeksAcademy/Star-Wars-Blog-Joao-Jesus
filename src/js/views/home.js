@@ -16,6 +16,7 @@ export const Home = () => {
       {store?.characters?.length > 0 &&
         store.characters.map((el) => (
           <MainCard id={el.uid} name={el.name} type="character"></MainCard>
+          
         ))}
         
     </div>

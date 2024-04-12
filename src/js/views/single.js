@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
-  console.log(theid); // corrected
+ 
 
   useEffect(() => {
     actions.getOneCharacters(theid);
@@ -17,7 +17,6 @@ export const Single = (props) => {
     <div className="container">
       <div className="card">
         <p>Name:{store.singleCharacter?.properties?.name}</p>
-        <p>Heigth:{store.singleCharacter?.properties?.height}</p>
         <p>Heigth:{store.singleCharacter?.properties?.height}</p>
         <p>gender:{store.singleCharacter?.properties?.gender}</p>
         <p>eye_color:{store.singleCharacter?.properties?.eye_color}</p>

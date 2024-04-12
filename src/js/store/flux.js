@@ -28,8 +28,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             "https://www.swapi.tech/api/planets/" + id
           );
           const planetData = await planetRes.json();
-
-          setStore({ singleplanet: planetData.result });
+          console.log(planetData)
+          console.log(id)
+          setStore({ singlePlanet: planetData.result });
         } catch (error) {
           console.log("error fetching characters", error);
         }

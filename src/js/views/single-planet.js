@@ -11,16 +11,16 @@ export const SinglePlanets = (props) => {
   useEffect(() => {
     
     actions.getOnePlanet(theid);
-  }, []); // dependency array added
-
+  }, [theid]); // dependency array added
+  console.log(store.singlePlanet);
   return (
     <div className="container">
       <div className="card">
-        <p>Name:{store.singlePlanet?.properties?.diameter}</p>
-        <p>Heigth:{store.singlePlanet?.properties?.rotation_period}</p>
-        <p>Heigth:{store.singlePlanet?.properties?.gravity}</p>
-        <p>gender:{store.singlePlanet?.properties?.population}</p>
-        <p>eye_color:{store.singlePlanet?.properties?.surface_watereye}</p>
+        <p>Diameter:{store.singlePlanet?.properties?.diameter}</p>
+        <p>Rotation:{store.singlePlanet?.properties?.rotation_period}</p>
+        <p>Gravity:{store.singlePlanet?.properties?.gravity}</p>
+        <p>Population:{store.singlePlanet?.properties?.population}</p>
+        <p>Terrain:{store.singlePlanet?.properties?.terrain}</p>
       </div>
     </div>
   );
