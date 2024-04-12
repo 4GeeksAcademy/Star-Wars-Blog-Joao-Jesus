@@ -3,29 +3,29 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = (props) => {
+export const SinglePlanets = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
   console.log(theid); // corrected
 
   useEffect(() => {
-    actions.getOneCharacters(theid);
     
+    actions.getOnePlanet(theid);
   }, []); // dependency array added
 
   return (
     <div className="container">
       <div className="card">
-        <p>Name:{store.singleCharacter?.properties?.name}</p>
-        <p>Heigth:{store.singleCharacter?.properties?.height}</p>
-        <p>Heigth:{store.singleCharacter?.properties?.height}</p>
-        <p>gender:{store.singleCharacter?.properties?.gender}</p>
-        <p>eye_color:{store.singleCharacter?.properties?.eye_color}</p>
+        <p>Name:{store.singlePlanet?.properties?.diameter}</p>
+        <p>Heigth:{store.singlePlanet?.properties?.rotation_period}</p>
+        <p>Heigth:{store.singlePlanet?.properties?.gravity}</p>
+        <p>gender:{store.singlePlanet?.properties?.population}</p>
+        <p>eye_color:{store.singlePlanet?.properties?.surface_watereye}</p>
       </div>
     </div>
   );
 };
 
-Single.propTypes = {
+SinglePlanets.propTypes = {
   match: PropTypes.object,
 };

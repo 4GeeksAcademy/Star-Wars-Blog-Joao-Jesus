@@ -2,13 +2,40 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       characters: [],
+      planets: [],
       singleCharacter: null,
+      singlePlanet: null,
     },
     actions: {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
+
+      getPlanets: async () =>  { 
+        try { 
+          const planetRes = await fetch("https://www.swapi.tech/api/planets");
+          
+          const planetData = await planetRes.json();
+          setStore({planets: [...planetData.results]})
+        }catch (error) {
+          console.log("error fetching planets", error);
+        }
+       }, 
+       getOnePlanet: async (id) => {
+        try {
+          const planetRes = await fetch(
+            "https://www.swapi.tech/api/planets/" + id
+          );
+          const planetData = await planetRes.json();
+
+          setStore({ singleplanet: planetData.result });
+        } catch (error) {
+          console.log("error fetching characters", error);
+        }
+      },
+     
+        
 
       getCharacters: async () => {
         try {
