@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getVehicles: async () =>  { 
         try { 
           const vehicleRes = await fetch("https://www.swapi.tech/api/vehicles");
-          console.log(vehicleData)
+         
           const vehicleData = await vehicleRes.json();
           setStore({vehicles: [...vehicleData.results]})
         }catch (error) {
@@ -26,14 +26,14 @@ const getState = ({ getStore, getActions, setStore }) => {
        getOneVehicle: async (id) => {
         try {
           const vehicleRes = await fetch(
-            "https://www.swapi.tech/api/vehicle/" + id
+            "https://www.swapi.tech/api/vehicles/" + id
           );
           const vehicleData = await vehicleRes.json();
           console.log(vehicleData)
           console.log(id)
           setStore({ singleVehicle: vehicleData.result });
         } catch (error) {
-          console.log("error fetching characters", error);
+          console.log("error fetching vehicles", error);
         }
       },
 

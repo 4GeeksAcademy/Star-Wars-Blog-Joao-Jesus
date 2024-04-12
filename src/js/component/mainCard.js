@@ -10,7 +10,7 @@ const MainCard = (props) => {
     linkPath = `/single/${id}`;
   } else if (type === "planet") {
     linkPath = `/single-planet/${id}`;
-  } else if (type === "vehicles") {
+  } else if (type === "vehicle") {
     linkPath = `/vehicles/${id}`;
   }
 

@@ -9,7 +9,6 @@ export const SingleVehicle = (props) => {
   console.log(theid); // corrected
 
   useEffect(() => {
-    
     actions.getOneVehicle(theid);
   }, [theid]); // dependency array added
   console.log(store.singleVehicle);

@@ -32,7 +32,7 @@ export const Home = () => {
     <div className="text-center mt-5 vehicle">
       {store?.vehicles?.length > 0 &&
         store.vehicles.map((el) => (
-          <MainCard key={el.uid}  id={el.uid} name={el.name} type="vehicles"></MainCard>
+          <MainCard key={el.uid}  id={el.uid} name={el.name} type="vehicle"></MainCard>
         ))}
       
     </div></>
