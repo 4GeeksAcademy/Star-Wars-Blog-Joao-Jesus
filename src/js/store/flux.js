@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
        getOneVehicle: async (id) => {
         try {
           const vehicleRes = await fetch(
-            "https://www.swapi.tech/api/vehicles/" + id
+            "https://www.swapi.tech/api/vehicles/" + id 
           );
           const vehicleData = await vehicleRes.json();
           console.log(vehicleData)

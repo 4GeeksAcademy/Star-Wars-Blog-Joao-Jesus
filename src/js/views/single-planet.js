@@ -7,7 +7,9 @@ export const SinglePlanets = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
   console.log(theid); // corrected
-
+  const imgUrl = store.singlePlanet ? `https://starwars-visualguide.com/assets/img/planets/${theid}.jpg` : '';
+  const name = store.singlePlanet ? store.singlePlanet.properties.name : '';
+ 
   useEffect(() => {
     
     actions.getOnePlanet(theid);
@@ -15,7 +17,9 @@ export const SinglePlanets = (props) => {
   console.log(store.singlePlanet);
   return (
     <div className="container">
+       {imgUrl && <img src={imgUrl} alt={name} />}
       <div className="card">
+        <p>Name:{store.singlePlanet?.properties?.name}</p>
         <p>Diameter:{store.singlePlanet?.properties?.diameter}</p>
         <p>Rotation:{store.singlePlanet?.properties?.rotation_period}</p>
         <p>Gravity:{store.singlePlanet?.properties?.gravity}</p>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MainCard = (props) => {
   const { id, name, type } = props;
   const imgUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg`;
-  let linkPath;
+  let linkPath;  
 
   if (type === "character") {
     linkPath = `/single/${id}`;
