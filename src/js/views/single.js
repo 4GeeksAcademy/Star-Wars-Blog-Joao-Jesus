@@ -19,12 +19,13 @@ export const Single = (props) => {
   return (
     <div className="container">
      {imgUrl && <img src={imgUrl} alt={name} />}
-      <div className="card">
+      <div className="card" >
         <p>Name:{store.singleCharacter?.properties?.name}</p>
         <p>Heigth:{store.singleCharacter?.properties?.height}</p>
         <p>gender:{store.singleCharacter?.properties?.gender}</p>
         <p>eye_color:{store.singleCharacter?.properties?.eye_color}</p>
       </div>
+      <Link className="btn btn-success">Add to favourites</Link>
     </div>
   );
 };

@@ -9,10 +9,8 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div>
-    <div className="text-center mt-5">
-      start
-      <input className="input"></input>
+    <div className="container ">
+    <div className="d-flex justify-content-end text-center mt-5">
       {store?.characters?.length > 0 &&
         store.characters.map((el) => (
           <MainCard key={el.uid}  id={el.uid} name={el.name} type="character"></MainCard>
@@ -21,7 +19,7 @@ export const Home = () => {
         
     </div>
     <>
-    <div className="text-center mt-5 planets">
+    <div className="d-flex justify-content-end text-center mt-5 planets">
       {store?.planets?.length > 0 &&
         store.planets.map((el) => (
           <MainCard key={el.uid}  id={el.uid} name={el.name} type="planet"></MainCard>
@@ -29,7 +27,7 @@ export const Home = () => {
       
     </div></>
     <>
-    <div className="text-center mt-5 vehicle">
+    <div className="d-flex justify-content-end text-center mt-5 vehicle">
       {store?.vehicles?.length > 0 &&
         store.vehicles.map((el) => (
           <MainCard key={el.uid}  id={el.uid} name={el.name} type="vehicle"></MainCard>

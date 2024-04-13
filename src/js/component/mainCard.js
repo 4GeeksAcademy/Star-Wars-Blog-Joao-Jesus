@@ -15,13 +15,15 @@ const MainCard = (props) => {
   }
 
   return (
-    <div className="card" key={id}>
+   
+    <div className="card-container"  key={id}>
       <img src={imgUrl} alt={name} />
       <h2>{name}</h2>
       <Link className="btn btn-primary" to={linkPath}>
         View Details
       </Link>
     </div>
+    
   );
 };
 
