@@ -59,7 +59,7 @@ export const SingleVehicle = (props) => {
             Max atmosphering speed:
              {store.singleVehicle?.properties?.max_atmosphering_speed}
           </p>
-          <p>Pilots: {store.singleVehicle?.properties?.pilots}</p> 
+          <p>Passengers: {store.singleVehicle?.properties?.passengers}</p> 
           {!isInFavorites ? (
           <button onClick={handleAddToFavorites}>Add to Favorites</button>
         ) : (
