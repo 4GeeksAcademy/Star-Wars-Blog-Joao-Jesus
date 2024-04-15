@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-dark  mb-3">
-			<Link to="/">
-				<span className="navbar-brand bg-dark text-light mb-0 h1">Home page</span>
+		<nav className="navbar navbar-light bg-dark  mb-2 ">
+			<Link to="/" className="btn btn-primary m-3">
+				<span className="navbar-brand text-light  mb-0 h1">Home page</span>
 			</Link>
-			<div className="ml-auto">
+			<div className="ml-3">
 				<Link to="/demo">
-				<Link className="btn btn-primary" to="/favorites">View Favorites</Link>
+				<Link className="btn btn-primary m-3" to="/favorites">View Favorites</Link>
 				</Link>
 			</div>
 		</nav>

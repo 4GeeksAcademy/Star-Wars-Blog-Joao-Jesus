@@ -36,7 +36,7 @@ export const Home = () => {
         ))}
       
     </div></div>
-    <Link className="btn btn-primary" to="/favorites">View Favorites</Link>
+  
     </ >
   );
 };
