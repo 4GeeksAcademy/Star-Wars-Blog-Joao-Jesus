@@ -5,28 +5,41 @@ import { Context } from "../store/appContext";
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
-  const { theid } = useParams();
+  const { 
+    
+   } = useParams();
  
   const imgUrl = store.singleCharacter ? `https://starwars-visualguide.com/assets/img/characters/${theid}.jpg` : '';
   const name = store.singleCharacter ? store.singleCharacter.properties.name : '';
   
-
+  const handleAddToFavorites = () => {
+    const favoriteItem = { id: theid, name: store.singleCharacter.properties.name };
+    console.log("favoriteItem")
+    console.log(favoriteItem)
+    // actions.addToFavorites(favoriteItem);
+  };
+  
   useEffect(() => {
     actions.getOneCharacters(theid);
     
   }, []); // dependency array added
 
   return (
-    <div className="container">
-     {imgUrl && <img src={imgUrl} alt={name} />}
+    <>
+     
       <div className="card" >
+       
+        <div className="card-body"> 
+        {imgUrl && <img src={imgUrl} alt={name} />}
         <p>Name:{store.singleCharacter?.properties?.name}</p>
         <p>Heigth:{store.singleCharacter?.properties?.height}</p>
         <p>gender:{store.singleCharacter?.properties?.gender}</p>
         <p>eye_color:{store.singleCharacter?.properties?.eye_color}</p>
-      </div>
-      <Link className="btn btn-success">Add to favourites</Link>
+      </div></div>
+      <div>
+      <button onClick={handleAddToFavorites}>Add to Favorites</button>
     </div>
+    </>
   );
 };
 

@@ -4,15 +4,15 @@ const getState = ({ getStore, getActions, setStore }) => {
       vehicles: [],
       characters: [],
       planets: [],
+      favorites: [],
       singleCharacter: null,
       singlePlanet: null,
-      singleVehicle:null
+      singleVehicle:null,
+    
     },
     actions: {
       // Use getActions to call a function within a fuction
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
+      
       getVehicles: async () =>  { 
         try { 
           const vehicleRes = await fetch("https://www.swapi.tech/api/vehicles");
@@ -87,6 +87,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("error fetching characters", error);
         }
       },
+
+      addToFavorites: (favoriteItem) => {
+        const { store, setStore } = getStore();
+        const updatedFavorites = [...store.favorites, favoriteItem];
+        console.log("updatedFavorites")
+        console.log(updatedFavorites)
+        setStore({ ...store, favorites: updatedFavorites });
+        
+      },
+      
       loadSomeData: () => {
         /**
 					fetch().then().then(data => setStore({ "foo": data.bar }))

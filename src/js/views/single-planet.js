@@ -9,14 +9,17 @@ export const SinglePlanets = (props) => {
   console.log(theid); // corrected
   const imgUrl = store.singlePlanet ? `https://starwars-visualguide.com/assets/img/planets/${theid}.jpg` : '';
   const name = store.singlePlanet ? store.singlePlanet.properties.name : '';
- 
+  const handleAddToFavorites = () => {
+    const favoriteItem = { id: 1, name: 'Favorite Item' };
+    actions.addToFavorites(favoriteItem);
+  };
   useEffect(() => {
     
     actions.getOnePlanet(theid);
   }, [theid]); // dependency array added
   console.log(store.singlePlanet);
-  return (
-    <div className="container">
+  return (<>
+    
        {imgUrl && <img src={imgUrl} alt={name} />}
       <div className="card">
         <p>Name:{store.singlePlanet?.properties?.name}</p>
@@ -26,7 +29,10 @@ export const SinglePlanets = (props) => {
         <p>Population:{store.singlePlanet?.properties?.population}</p>
         <p>Terrain:{store.singlePlanet?.properties?.terrain}</p>
       </div>
+      <div>
+      <button onClick={handleAddToFavorites}>Add to Favorites</button>
     </div>
+    </>
   );
 };
 
