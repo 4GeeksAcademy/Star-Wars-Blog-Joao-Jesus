@@ -4,9 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { Single } from "./views/single";
-import { SinglePlanets } from "./views/single-planet";
-import { SingleVehicle } from "./views/vehicles";
+import { SingleCharacter} from "./views/single-character";
+import { SinglePlanet } from "./views/single-planet";
+import { SingleVehicle } from "./views/single-vehicle";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -27,9 +27,9 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/demo" element={<Demo />} />
-            <Route path="/single/:theid" element={<Single />} />
-            <Route path="/single-planet/:theid" element={<SinglePlanets />} />
-            <Route path="/vehicles/:theid" element={<SingleVehicle />} />
+            <Route path="/single-character/:theid" element={<SingleCharacter />} />
+            <Route path="/single-planet/:theid" element={<SinglePlanet />} />
+            <Route path="/single-vehicle/:theid" element={<SingleVehicle />} />
             <Route path="/favorites" element={<FavoritesCard />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>

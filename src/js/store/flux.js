@@ -7,61 +7,58 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       singleCharacter: null,
       singlePlanet: null,
-      singleVehicle:null,
-    
+      singleVehicle: null,
     },
     actions: {
       // Use getActions to call a function within a fuction
-      
-      getVehicles: async () =>  { 
-        try { 
+
+      getVehicles: async () => {
+        try {
           const vehicleRes = await fetch("https://www.swapi.tech/api/vehicles");
-         
+
           const vehicleData = await vehicleRes.json();
-          setStore({vehicles: [...vehicleData.results]})
-        }catch (error) {
+          setStore({ vehicles: [...vehicleData.results] });
+        } catch (error) {
           console.log("error fetching planets", error);
         }
-       }, 
-       getOneVehicle: async (id) => {
+      },
+      getOneVehicle: async (id) => {
         try {
           const vehicleRes = await fetch(
-            "https://www.swapi.tech/api/vehicles/" + id 
+            "https://www.swapi.tech/api/vehicles/" + id
           );
           const vehicleData = await vehicleRes.json();
-          console.log(vehicleData)
-          console.log(id)
+          console.log(vehicleData);
+          console.log(id);
           setStore({ singleVehicle: vehicleData.result });
         } catch (error) {
           console.log("error fetching vehicles", error);
         }
       },
 
-      getPlanets: async () =>  { 
-        try { 
+      getPlanets: async () => {
+        try {
           const planetRes = await fetch("https://www.swapi.tech/api/planets");
-          
+
           const planetData = await planetRes.json();
-          setStore({planets: [...planetData.results]})
-        }catch (error) {
+          setStore({ planets: [...planetData.results] });
+        } catch (error) {
           console.log("error fetching planets", error);
         }
-       }, 
-       getOnePlanet: async (id) => {
+      },
+      getOnePlanet: async (id) => {
         try {
           const planetRes = await fetch(
             "https://www.swapi.tech/api/planets/" + id
           );
           const planetData = await planetRes.json();
-          console.log(planetData)
-          console.log(id)
+          console.log(planetData);
+          console.log(id);
           setStore({ singlePlanet: planetData.result });
         } catch (error) {
           console.log("error fetching characters", error);
         }
       },
-     
-        
 
       getCharacters: async () => {
         try {
@@ -89,14 +86,26 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       addToFavorites: (favoriteItem) => {
-        const { store, setStore } = getStore();
+        const store = getStore();
+
         const updatedFavorites = [...store.favorites, favoriteItem];
-        console.log("updatedFavorites")
-        console.log(updatedFavorites)
+
         setStore({ ...store, favorites: updatedFavorites });
-        
       },
-      
+
+      removeFromFavorites: (favoriteItem) => {
+        const store = getStore();
+
+        const updatedFavorites = store.favorites.filter((favorite) => {
+          return (
+            favorite.id !== favoriteItem.id &&
+            favorite.type !== favoriteItem.type
+          );
+        });
+
+        setStore({ ...store, favorites: updatedFavorites });
+      },
+
       loadSomeData: () => {
         /**
 					fetch().then().then(data => setStore({ "foo": data.bar }))

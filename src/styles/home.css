@@ -2,8 +2,35 @@
     display: flex; /* Set display to flex */
     overflow-x: auto; /* Enable horizontal scrolling */
     padding: 10px; /* Add padding to the container */
+    
   }
   
   .card{
     flex: 0 0 auto; /* Allow cards to shrink if needed */
   }
+  
+  .h-100 {
+
+    background-color: black;
+  }
+  .character-image {
+    width: 130px;
+    height: 150px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
+  .planet-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
+  .vehicle-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
