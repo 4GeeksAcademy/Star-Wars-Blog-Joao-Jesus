@@ -53,20 +53,21 @@ export const SingleCharacter = (props) => {
       <div className="card bg-dark p-3">
         <div className="card-body text-light text-center">
           {imgUrl && <img src={imgUrl} alt={name} />}
-          <p >Name: {store.singleCharacter?.properties?.name}</p>
+          <p>Name: {store.singleCharacter?.properties?.name}</p>
           <p>Heigth: {store.singleCharacter?.properties?.height}</p>
           <p>Gender: {store.singleCharacter?.properties?.gender}</p>
-          <p>Eye color: {store.singleCharacter?.properties?.eye_color}</p>
-        </div>
-      </div>
-      <div>
-        {!isInFavorites ? (
+          <p>Eye color: {store.singleCharacter?.properties?.eye_color}</p> 
+          {!isInFavorites ? (
           <button onClick={handleAddToFavorites}>Add to Favorites</button>
         ) : (
           <button onClick={handleRemoveFromFavorites}>
             Remove from Favorites
           </button>
         )}
+        </div>
+      </div>
+      <div>
+       
       </div>
     </>
   );

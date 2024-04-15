@@ -1,20 +1,20 @@
 .container {
     display: flex; /* Set display to flex */
     overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 10px; /* Add padding to the container */
-    
+    background-color: gray;
+    border: 1px solid gray;
   }
   
   .card{
-    flex: 0 0 auto; /* Allow cards to shrink if needed */
-  }
+    border:1px solid gray;
   
+  }
   .h-100 {
 
     background-color: black;
   }
   .character-image {
-    width: 130px;
+    width: 150px;
     height: 150px;
     margin-left: 4px;
     margin-right: 4px;

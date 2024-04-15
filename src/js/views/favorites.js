@@ -8,7 +8,7 @@ const FavoritesView = () => {
   const { store } = useContext(Context);
 
   return (
-    <div className="card-container">
+    <div className="container">
       {store?.favorites?.length > 0 ? (
         store.favorites.map((favorite) => {
           const { id, name, type } = favorite;

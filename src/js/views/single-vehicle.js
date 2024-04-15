@@ -48,27 +48,28 @@ export const SingleVehicle = (props) => {
 
   return (
     <>
-      <div className="card bg-dark p-3">
-      <div className="card-body bg-dark p-3  text-light text-center">
+      <div className="card bg-dark">
+      <div className="card-body bg-dark p-3  text-light text-center mt-2">
           {imgUrl && <img src={imgUrl} alt={name} />}
           <p>Model: {store.singleVehicle?.properties?.model}</p>
-          <p>Vehicle_class: {store.singleVehicle?.properties?.vehicle_class}</p>
+          <p>Vehicle class: {store.singleVehicle?.properties?.vehicle_class}</p>
           <p>Crew: {store.singleVehicle?.properties?.crew}</p>
           <p>
-            Max_atmosphering_speed:
+            Max atmosphering speed:
              {store.singleVehicle?.properties?.max_atmosphering_speed}
           </p>
-          <p>Pilots: {store.singleVehicle?.properties?.pilots}</p>
-        </div></div>
-      
-      <div>
-        {!isInFavorites ? (
+          <p>Pilots: {store.singleVehicle?.properties?.pilots}</p> 
+          {!isInFavorites ? (
           <button onClick={handleAddToFavorites}>Add to Favorites</button>
         ) : (
           <button onClick={handleRemoveFromFavorites}>
             Remove from Favorites
           </button>
         )}
+        </div></div>
+      
+      <div>
+       
       </div>
     </>
   );

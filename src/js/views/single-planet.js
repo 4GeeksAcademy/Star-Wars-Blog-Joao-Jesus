@@ -56,7 +56,7 @@ export const SinglePlanet = (props) => {
 
   return (
     <>
-       <div className="card bg-dark p-3">
+       <div className="card bg-dark">
       <div className="card-body text-light text-center">
         {imgUrl && <img src={imgUrl} alt={name} />}
         <p>Name:{store.singlePlanet?.properties?.name}</p>
@@ -65,8 +65,6 @@ export const SinglePlanet = (props) => {
         <p>Gravity:{store.singlePlanet?.properties?.gravity}</p>
         <p>Population:{store.singlePlanet?.properties?.population}</p>
         <p>Terrain:{store.singlePlanet?.properties?.terrain}</p>
-      </div></div>
-      <div>
         {!isInFavorites ? (
           <button onClick={handleAddToFavorites}>Add to Favorites</button>
         ) : (
@@ -74,6 +72,9 @@ export const SinglePlanet = (props) => {
             Remove from Favorites
           </button>
         )}
+      </div></div>
+      <div>
+        
       </div>
     </>
   );
