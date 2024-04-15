@@ -56,15 +56,16 @@ export const SinglePlanet = (props) => {
 
   return (
     <>
-       <div className="card bg-dark">
-      <div className="card-body text-light text-center">
+       <div className="container">
+      <div className="card-body text-center text-light ">
+       
+        <h4>Name: {store.singlePlanet?.properties?.name}</h4> 
         {imgUrl && <img src={imgUrl} alt={name} />}
-        <p>Name:{store.singlePlanet?.properties?.name}</p>
-        <p>Diameter:{store.singlePlanet?.properties?.diameter}</p>
-        <p>Rotation:{store.singlePlanet?.properties?.rotation_period}</p>
-        <p>Gravity:{store.singlePlanet?.properties?.gravity}</p>
-        <p>Population:{store.singlePlanet?.properties?.population}</p>
-        <p>Terrain:{store.singlePlanet?.properties?.terrain}</p>
+        <p>Diameter: {store.singlePlanet?.properties?.diameter}</p>
+        <p>Rotation: {store.singlePlanet?.properties?.rotation_period}</p>
+        <p>Gravity: {store.singlePlanet?.properties?.gravity}</p>
+        <p>Population: {store.singlePlanet?.properties?.population}</p>
+        <p>Terrain: {store.singlePlanet?.properties?.terrain}</p>
         {!isInFavorites ? (
           <button onClick={handleAddToFavorites}>Add to Favorites</button>
         ) : (

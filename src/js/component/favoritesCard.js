@@ -7,7 +7,7 @@ export default function FavoritesCard(props) {
   const imgUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg`;
 
   return (
-    <div className="card-container" key={id}>
+    <div className="card-container text-center" key={id}>
       <img src={imgUrl} alt={name} />
       <h2>{name}</h2>
       <Link className="btn btn-light text-center" to={`/single-${type}/${id}`}>

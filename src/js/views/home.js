@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <>
     
-    <div className="container bg-dark">
+    <div className="container">
     <div className=" d-flex justify-content-end text-center mt-5">
       {store?.characters?.length > 0 &&
         store.characters.map((el) => (

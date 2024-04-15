@@ -50,10 +50,11 @@ export const SingleCharacter = (props) => {
 
   return (
     <>
-      <div className="card bg-dark p-3">
-        <div className="card-body text-light text-center">
+       <div className="container">
+      <div className="card-body text-center text-light">
+          
+          <h5>Name: {store.singleCharacter?.properties?.name}</h5>
           {imgUrl && <img src={imgUrl} alt={name} />}
-          <p>Name: {store.singleCharacter?.properties?.name}</p>
           <p>Heigth: {store.singleCharacter?.properties?.height}</p>
           <p>Gender: {store.singleCharacter?.properties?.gender}</p>
           <p>Eye color: {store.singleCharacter?.properties?.eye_color}</p> 

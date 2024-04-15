@@ -1,35 +1,38 @@
 .container {
     display: flex; /* Set display to flex */
     overflow-x: auto; /* Enable horizontal scrolling */
-    background-color: gray;
+    background-color: rgb(39, 33, 33);
     border: 1px solid gray;
+    
   }
   
   .card{
-    border:1px solid gray;
-  
+    color: white;
+    background-color: rgb(63, 55, 55);
+    justify-content: end;
+    max-width: fit-content;
   }
   .h-100 {
 
     background-color: black;
   }
   .character-image {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     margin-left: 4px;
     margin-right: 4px;
   }
   
   .planet-image {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     margin-left: 4px;
     margin-right: 4px;
   }
   
   .vehicle-image {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     margin-left: 4px;
     margin-right: 4px;
   }

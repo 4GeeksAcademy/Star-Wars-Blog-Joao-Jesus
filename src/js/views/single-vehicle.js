@@ -48,10 +48,11 @@ export const SingleVehicle = (props) => {
 
   return (
     <>
-      <div className="card bg-dark">
-      <div className="card-body bg-dark p-3  text-light text-center mt-2">
+      <div className="container">
+      <div className="card-body text-center text-light">
+          
+          <h5>Model: {store.singleVehicle?.properties?.model}</h5>
           {imgUrl && <img src={imgUrl} alt={name} />}
-          <p>Model: {store.singleVehicle?.properties?.model}</p>
           <p>Vehicle class: {store.singleVehicle?.properties?.vehicle_class}</p>
           <p>Crew: {store.singleVehicle?.properties?.crew}</p>
           <p>

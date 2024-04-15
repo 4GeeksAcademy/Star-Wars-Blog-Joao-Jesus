@@ -6,9 +6,9 @@ const MainCard = (props) => {
   const imgUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg`;
   const imageClass = type === "character" ? "character-image" : type === "planet" ? "planet-image" : type === "vehicle" ? "vehicle-image" : "";
   return (
-    <div className="card-container bg-dark" key={id}>
+    <div className="card" key={id}>
      <img src={imgUrl} alt={name} className={imageClass} />
-      <h2>{name}</h2>
+      <h5>{name}</h5>
       <Link className="btn btn-light" to={`/single-${type}/${id}`}>
         View Details
       </Link>
