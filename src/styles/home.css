@@ -13,9 +13,11 @@
     justify-content: end;
     max-width: fit-content;
   }
+
   .h-100 {
     background-color: black;
   }
+  
   .character-image {
     width: auto;
     height: 250px;

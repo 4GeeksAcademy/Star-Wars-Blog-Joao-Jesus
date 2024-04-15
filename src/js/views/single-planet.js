@@ -15,10 +15,6 @@ export const SinglePlanet = (props) => {
     : "";
   const name = store.singlePlanet ? store.singlePlanet.properties.name : "";
 
-  // const handleAddToFavorites = () => {
-  //   const favoriteItem = { id: 1, name: 'Favorite Item' };
-  //   actions.addToFavorites(favoriteItem);
-  // };
 
   const handleAddToFavorites = () => {
     const favoriteItem = {
