@@ -19,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const vehicleData = await vehicleRes.json();
           setStore({ vehicles: [...vehicleData.results] });
         } catch (error) {
-          console.log("error fetching planets", error);
+          console.log("error fetching vehicles", error);
         }
       },
       getOneVehicle: async (id) => {
@@ -56,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(id);
           setStore({ singlePlanet: planetData.result });
         } catch (error) {
-          console.log("error fetching characters", error);
+          console.log("error fetching planets", error);
         }
       },
 
