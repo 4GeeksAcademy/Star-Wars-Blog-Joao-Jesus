@@ -56,8 +56,7 @@ export const SingleVehicle = (props) => {
           <p>Vehicle class: {store.singleVehicle?.properties?.vehicle_class}</p>
           <p>Crew: {store.singleVehicle?.properties?.crew}</p>
           <p>
-            Max atmosphering speed:
-             {store.singleVehicle?.properties?.max_atmosphering_speed}
+            Max atmosphering speed: {store.singleVehicle?.properties?.max_atmosphering_speed}
           </p>
           <p>Passengers: {store.singleVehicle?.properties?.passengers}</p> 
           {!isInFavorites ? (

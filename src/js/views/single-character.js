@@ -30,6 +30,7 @@ export const SingleCharacter = (props) => {
     const favoriteItem = {
       id: theid,
       type: "character",
+      name: store.singleCharacter.properties.name,
     };
 
     actions.removeFromFavorites(favoriteItem);

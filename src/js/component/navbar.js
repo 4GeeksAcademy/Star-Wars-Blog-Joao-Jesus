@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import FavoritesCounter from "./favoritesCounter"
+
 export const Navbar = () => {
     return (
         <nav className="navbar navbar-light mb-3 justify-content-evenly ">
@@ -20,6 +22,8 @@ export const Navbar = () => {
                     <Link className="btn btn-danger m-3" to="/favorites">View Favorites</Link>
                 </Link>
             </div>
+
+            <FavoritesCounter></FavoritesCounter>
         </nav>
     );
 };

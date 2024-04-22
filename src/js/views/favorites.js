@@ -9,6 +9,8 @@ const FavoritesView = () => {
 
   return (
     <div className="container">
+      <div className="card">
+       
       {store?.favorites?.length > 0 ? (
         store.favorites.map((favorite) => {
           const { id, name, type } = favorite;
@@ -23,7 +25,9 @@ const FavoritesView = () => {
         })
       ) : (
         <h2>No favorites</h2>
-      )}
+        
+      )}</div>
+      
     </div>
   );
 };

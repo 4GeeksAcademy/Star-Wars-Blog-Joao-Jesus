@@ -97,10 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
 
         const updatedFavorites = store.favorites.filter((favorite) => {
-          return (
-            favorite.id !== favoriteItem.id &&
-            favorite.type !== favoriteItem.type
-          );
+          return favorite.name !== favoriteItem.name;
         });
 
         setStore({ ...store, favorites: updatedFavorites });

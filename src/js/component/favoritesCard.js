@@ -13,6 +13,7 @@ export default function FavoritesCard(props) {
         <Link className="btn btn-light text-center" to={`/single-${type}/${id}`}>
         View Details
         </Link>
+       
       </div>
   );
 }
