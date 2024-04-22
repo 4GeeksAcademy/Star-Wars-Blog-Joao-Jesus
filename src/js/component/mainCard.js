@@ -7,7 +7,7 @@ const MainCard = (props) => {
 
   const { id, name, type } = props;
 
-  const imgUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg;`
+  const imgUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg`;
   const imageClass =
     type === "character"
       ? "character-image"
@@ -44,6 +44,5 @@ const MainCard = (props) => {
 };
 
 export default MainCard;
-
 
 

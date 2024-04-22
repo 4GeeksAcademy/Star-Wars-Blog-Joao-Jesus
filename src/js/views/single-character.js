@@ -12,6 +12,7 @@ export const SingleCharacter = (props) => {
   const imgUrl = store.singleCharacter
     ? `https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`
     : "";
+    
   const name = store.singleCharacter
     ? store.singleCharacter.properties.name
     : "";

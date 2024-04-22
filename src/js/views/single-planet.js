@@ -13,7 +13,10 @@ export const SinglePlanet = (props) => {
   const imgUrl = store.singlePlanet
     ? `https://starwars-visualguide.com/assets/img/planets/${theid}.jpg`
     : "";
-  const name = store.singlePlanet ? store.singlePlanet.properties.name : "";
+  
+    const name = store.singlePlanet ? 
+    store.singlePlanet.properties.name 
+    : "";
 
 
   const handleAddToFavorites = () => {
@@ -31,6 +34,7 @@ export const SinglePlanet = (props) => {
     const favoriteItem = {
       id: theid,
       type: "planet",
+      name: store.singlePlanet.properties.name,
     };
 
     actions.removeFromFavorites(favoriteItem);
@@ -53,7 +57,7 @@ export const SinglePlanet = (props) => {
   return (
     <>
        <div className="container">
-      <div className="card-body text-center text-light ">
+       <div className="card-body text-center text-light ">
        
         <h4>Name: {store.singlePlanet?.properties?.name}</h4> 
         {imgUrl && <img src={imgUrl} alt={name} />}

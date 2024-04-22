@@ -12,7 +12,8 @@ export const SingleVehicle = (props) => {
   const imgUrl = store.singleVehicle
     ? `https://starwars-visualguide.com/assets/img/vehicles/${theid}.jpg`
     : "";
-  const name = store.singleVehicle ? store.singleVehicle.properties.name : "";
+  const name = store.singleVehicle
+   ? store.singleVehicle.properties.name : "";
 
   const handleAddToFavorites = () => {
     const favoriteItem = {
@@ -28,6 +29,7 @@ export const SingleVehicle = (props) => {
     const favoriteItem = {
       id: theid,
       type: "vehicle",
+      name: store.singleVehicle.properties.name,
     };
 
     actions.removeFromFavorites(favoriteItem);
