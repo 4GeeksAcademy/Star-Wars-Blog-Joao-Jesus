@@ -15,12 +15,6 @@ export const Navbar = () => {
                     style={{ width: "100px", height: "auto" }}
                 />
             </Link>
-            
-            <div className="ml-3">
-                <Link to="/demo">
-                    <Link className="btn btn-danger m-3" to="/favorites">View Favorites</Link>
-                </Link>
-            </div>
 
             <FavoritesCounter></FavoritesCounter>
         </nav>
