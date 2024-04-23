@@ -19,25 +19,28 @@ const MainCard = (props) => {
 
   return (
     <div className="card" key={id}>
-      <img src={imgUrl} alt={name} className={imageClass} />
-      <h5>{name}</h5>
-      <div>
-        <Link className="btn btn-light" to={`/single-${type}/${id}`}>
+      <img class="card-img-top" src={imgUrl} alt={name} className={imageClass} />
+      <div className="card-body" key={id}>
+        <h5 class="card-title">{name}</h5>
+      <div className=" d-flex justify-content-evenly ">
+        
+         <Link className="btn btn-danger text-dark btn-sm" to={`/single-${type}/${id}`}>
           View Details
         </Link>
-
         {store?.favorites?.filter((favorite) => favorite.name == name)?.length >
         0 ? (
           <i
-            className="fa fa-skull"
+            className="fa fa-skull m-3"
             onClick={() => actions.removeFromFavorites({ id, name, type })}
           ></i>
         ) : (
           <i
-            className="fa fa-heart"
+            className="fa fa-heart m-3"
             onClick={() => actions.addToFavorites({ id, name, type })}
           ></i>
         )}
+       
+      </div>
       </div>
     </div>
   );
