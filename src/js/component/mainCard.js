@@ -24,7 +24,8 @@ const MainCard = (props) => {
         <h5 class="card-title">{name}</h5>
       <div className=" d-flex justify-content-evenly ">
         
-         <Link className="btn btn-danger text-dark btn text-center" to={`/single-${type}/${id}`}>
+         <Link className="btn btn-danger text-dark text-center" 
+         to={`/single-${type}/${id}`}>
           View Details
         </Link>
         {store?.favorites?.filter((favorite) => favorite.name == name)?.length >
